@@ -10,8 +10,8 @@ import axios from "axios";
 // const userBaseURL = 'http://localhost:3001/api/v1/users';
 // const appointmentBaseURL = 'http://localhost:3002/api/v1/appointments';
 
-const appointmentBaseURL='https://stumpless-conceitedly-melissa.ngrok-free.dev'
-const userBaseURL='https://euphoric-rodrick-nonsecretively.ngrok-free.dev'
+const appointmentBaseURL='https://stumpless-conceitedly-melissa.ngrok-free.dev/api/v1/users'
+const userBaseURL='https://euphoric-rodrick-nonsecretively.ngrok-free.dev/api/v1/appointments'
 console.log("🔍 userBaseURL:", userBaseURL);
 console.log("🔍 appointmentBaseURL:", appointmentBaseURL);
 
