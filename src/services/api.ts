@@ -12,6 +12,7 @@ import axios from "axios";
 
 const appointmentBaseURL='https://stumpless-conceitedly-melissa.ngrok-free.dev/api/v1/appointments'
 const userBaseURL='https://euphoric-rodrick-nonsecretively.ngrok-free.dev/api/v1/users'
+console.log('made updates')
 console.log("🔍 userBaseURL:", userBaseURL);
 console.log("🔍 appointmentBaseURL:", appointmentBaseURL);
 
