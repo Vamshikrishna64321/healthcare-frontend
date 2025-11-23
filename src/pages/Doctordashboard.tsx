@@ -13,11 +13,8 @@ import {
   Calendar,
   Users,
   Activity,
-  TrendingUp,
-  FileText,
   Video,
   Clock,
-  Stethoscope,
   AlertCircle,
   LogOut,
 } from "lucide-react";
@@ -59,7 +56,7 @@ const DoctorDashboard = () => {
           // @ts-ignore backend shape
           setAppointments(response.data.appointments || []);
         }
-      } catch (err) {
+      } catch {
         setError("Unable to load your schedule. Please try again.");
       } finally {
         setLoading(false);
@@ -152,13 +149,6 @@ const DoctorDashboard = () => {
   const handleLogout = () => {
     logout();
     navigate("/login");
-  };
-
-  const scheduleFilterLabelMap: Record<ScheduleFilter, string> = {
-    today: "Today",
-    tomorrow: "Tomorrow",
-    week: "Next 7 days",
-    all: "All confirmed",
   };
 
   // -------------------------
