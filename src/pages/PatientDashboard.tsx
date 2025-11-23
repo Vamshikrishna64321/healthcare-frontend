@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 const PatientDashboard = () => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
 
   const upcomingAppointments = [
     {
@@ -36,27 +36,58 @@ const PatientDashboard = () => {
       <div className="max-w-7xl mx-auto px-6">
 
         {/* ================================
-            HEADER
+            HEADER (NOW WITH LOGOUT)
         ================================ */}
-        <header className="mb-10">
-          <p className="text-[11px] uppercase tracking-[0.25em] text-sky-400 mb-2 font-semibold">
-            CareSync / Patient
-          </p>
+        <header className="mb-10 flex justify-between items-start">
 
-          <h1 className="text-3xl md:text-4xl font-semibold text-white mb-1">
-            Welcome back, {user?.profile.firstName}! 👋
-          </h1>
+          {/* LEFT: Welcome */}
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.25em] text-sky-400 mb-2 font-semibold">
+              CareSync / Patient
+            </p>
 
-          <p className="text-slate-400 text-sm">
-            Here’s your personalized health overview.
-          </p>
+            <h1 className="text-3xl md:text-4xl font-semibold text-white mb-1">
+              Welcome back, {user?.profile.firstName}! 👋
+            </h1>
+
+            <p className="text-slate-400 text-sm">
+              Here’s your personalized health overview.
+            </p>
+          </div>
+
+          {/* RIGHT: Identity + Logout */}
+          <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 rounded-2xl backdrop-blur-xl shadow-[0_18px_45px_rgba(15,23,42,0.4)]">
+
+            {/* User Initials */}
+            <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-sky-500 to-emerald-500 
+                            flex items-center justify-center text-white font-semibold text-sm">
+              {user?.profile.firstName?.[0]}
+              {user?.profile.lastName?.[0]}
+            </div>
+
+            {/* User name + role */}
+            <div className="text-[11px] text-slate-200 leading-tight">
+              <p className="font-medium">
+                {user?.profile.firstName} {user?.profile.lastName}
+              </p>
+              <p className="text-slate-400">Patient</p>
+            </div>
+
+            {/* Logout Button */}
+            <button
+              onClick={logout}
+              className="ml-3 px-3 py-1.5 text-[11px] font-semibold text-white 
+                         bg-rose-600/80 hover:bg-rose-600 transition rounded-xl"
+            >
+              Logout
+            </button>
+          </div>
         </header>
 
         {/* ================================
             STATS GRID
         ================================ */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          {/* Card */}
           {[
             {
               icon: <Calendar className="text-sky-300" size={26} />,
@@ -105,7 +136,7 @@ const PatientDashboard = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
 
           {/* =====================================
-              LEFT: UPCOMING APPOINTMENTS + METRICS
+              LEFT: APPOINTMENTS + METRICS
           ===================================== */}
           <div className="lg:col-span-2 space-y-10">
 
