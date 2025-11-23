@@ -11,9 +11,7 @@ import type { User } from "../types";
 import {
   Search,
   Filter,
-  Stethoscope,
   Award,
-  Clock,
   DollarSign,
   Users,
 } from "lucide-react";

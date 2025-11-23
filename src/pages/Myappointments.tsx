@@ -93,7 +93,7 @@ const MyAppointments = () => {
       rejected: "bg-slate-500/10 border border-slate-500/40 text-slate-200",
     };
 
-    const icons: Record<string, JSX.Element> = {
+    const icons: Record<string, React.ReactNode> = {
       pending: <Clock size={14} />,
       confirmed: <CheckCircle size={14} />,
       completed: <CheckCircle size={14} />,

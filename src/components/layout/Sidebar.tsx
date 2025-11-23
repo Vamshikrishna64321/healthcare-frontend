@@ -5,7 +5,7 @@
 
 import { Link, useNavigate } from "react-router-dom";
 import { X, Calendar, Home, LogOut, User, Video } from "lucide-react";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 
 interface SidebarProps {
   isOpen: boolean;
