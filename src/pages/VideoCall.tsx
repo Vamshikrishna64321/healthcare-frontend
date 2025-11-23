@@ -84,8 +84,11 @@ const VideoCall: React.FC<VideoCallProps> = ({
             setConnectionStatus('connecting');
 
             // Initialize socket connection
-            const socketUrl = import.meta.env.VITE_SIGNALING_SERVER || 'ws://localhost:3003';
+            const socketUrl = 'wss://estimate-hall-perspective-weights.trycloudflare.com '
             await webRTCService.initializeSocket(socketUrl);
+
+
+            console.log()
 
             // Set event handlers
             webRTCService.setEventHandlers({
